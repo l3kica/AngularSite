@@ -1,1 +1,452 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    padding: 0;
+    margin-left: 0px;
+}
+
+body {
+    color: rgb(225, 28, 71);
+    background-color: rgb(7, 11, 19);
+    font-family: Ubuntu;
+    font-weight: 300;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 0px 30px;
+    font-size: 20px;
+    background-color: rgba(7, 11, 19, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 101;
+}
+
+.leftpart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.leftpart img {
+    height: 40px;
+}
+
+.leftpart img:hover {
+    cursor: pointer;
+}
+
+.midpart {
+    align-items: center;
+    font-weight: 700;
+    position: relative;
+    font-size: 32px;
+    height: 75px;
+    display: flex;
+    flex: 5;
+    justify-content: center;
+    border-bottom: 1px solid rgb(225, 28, 71);
+    z-index: 102;
+    animation: BorderFlash 8s infinite;
+    animation-delay: 6s;
+    margin-right: 20px;
+}
+
+.tooltipdiv {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltipdiv .tooltip {
+    font-family: Ubuntu;
+    position: absolute;
+    color: rgb(225, 28, 71);
+    background-color: rgb(43, 24, 29);
+    bottom: -30px;
+    white-space: nowrap;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    opacity: 0;
+    font-size: 14px;
+}
+
+.tooltipdiv:hover .tooltip {
+    transition: 0.15s;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+
+@keyframes BorderFlash {
+    0% {
+        border-bottom: 1px solid rgb(225, 28, 71);
+    }
+
+    20% {
+        border-bottom: 1px solid rgb(225, 28, 71);
+    }
+
+    50% {
+        border-bottom: 1px solid rgba(225, 28, 71, 0);
+    }
+
+    80% {
+        border-bottom: 1px solid rgb(225, 28, 71);
+    }
+
+    100% {
+        border-bottom: 1px solid rgb(225, 28, 71);
+    }
+}
+
+.rightpart {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightpart img {
+    height: 40px;
+}
+
+.rightpart img:hover {
+    cursor: pointer;
+}
+
+#orderimg {
+    margin-left: 10px;
+}
+
+
+main {
+    margin-left: 0px;
+}
+
+.div1 {
+    margin-left: 0px;
+    height: 100vh;
+    width: 98vw;
+    background-image: url("../src/assets/bg1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcometext {
+    font-size: 50px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.animatetext1,
+.animatetext2 {
+    margin: 25px 0px;
+}
+
+.animatetext1 {
+    color: rgba(225, 28, 71, 0);
+    animation: AppearingText 2s ease 1s 1 normal forwards;
+}
+
+.animatetext2 {
+    color: rgba(225, 28, 71, 0);
+    animation: AppearingText 2s ease 2.5s 1 normal forwards;
+}
+
+@keyframes AppearingText {
+    0% {
+        color: rgba(225, 28, 71, 0);
+    }
+
+    100% {
+        color: rgb(225, 28, 71);
+    }
+}
+
+.animatetext2 strong {
+    color: rgba(225, 28, 71, 0);
+    font-weight: 700;
+    animation: AppearingText 2s ease 4s 1 normal forwards;
+}
+
+.div2 {
+    margin-left: 0px;
+    height: 100vh;
+    width: 98vw;
+    background-image: url("../src/assets/bg2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.div4 {
+    margin-left: 0px;
+    height: 100vh;
+    width: 98vw;
+    background-image: url("../src/assets/bglast.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desc {
+    width: 900px;
+    height: 40vh;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+}
+
+#descpar
+{
+    padding-top: 4px;
+    padding-left: 20px;
+}
+
+.desc img{
+    height: 90px;
+}
+
+.hiddentext,
+.hiddenimgs {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    filter: blur(5px);
+    transition: 1s;
+}
+
+.hiddentext {
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 100px;
+}
+
+.hiddentext p,
+.hiddenimgs img {
+    margin-bottom: 50px;
+}
+
+.hiddenimgs img {
+    height: 100px;
+}
+
+.showtext {
+    filter: blur(0px);
+    opacity: 1;
+    transition: 1s;
+    transition-delay: 2s;
+}
+
+.showimgs {
+    filter: blur(0px);
+    opacity: 1;
+    transition: 1s;
+    transition-delay: 1s;
+}
+
+.div3 {
+    margin-left: 0px;
+    height: 100vh;
+    width: 98vw;
+    background-image: url("../src/assets/bg3.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.plantext {
+    position: absolute;
+    left: 10vw;
+    top: 15vh;
+    right: 50vw;
+    font-size: 34px;
+    font-weight: 500px;
+}
+
+
+.ordercontainer {
+    position: absolute;
+    left: 10vw;
+    top: 25vh;
+    bottom: 10vh;
+    right: 10vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.ordertype {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    border: 1px rgb(225, 28, 71) solid;
+    padding: 16px;
+    border-radius: 8px;
+
+}
+
+.ordertype:hover {
+    cursor: pointer;
+    background-color: rgba(225, 28, 71, 0.1);
+    transition: 0.15s;
+}
+
+.orderdiv {
+    display: flex;
+    position: absolute;
+    padding-top: 100px;
+    padding-left: 400px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../src/assets/orderbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.forma {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.row1 {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row1 input,
+.row1 textarea {
+    width: 300px;
+}
+
+.orderdiv button {
+    background-color: rgb(225, 28, 71);
+    color: rgb(7, 11, 19);
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 700;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.orderdiv button:hover {
+    cursor: pointer;
+    background-color: rgba(225, 28, 71, 0.8);
+    transition: 0.15s;
+}
+
+.coop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    padding-top: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../src/assets/cooperatebg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.donji {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+}
+
+.gornji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 56px;
+    font-weight: 700;
+    background-color: rgba(7, 11, 19, 0.9);
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-radius: 24px;
+    width: 700px;
+    text-decoration: none;
+    color: rgb(225, 28, 71);
+}
+
+.social {
+    background-color: rgba(7, 11, 19, 0.9);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.soc {
+    width: 126px;
+}
+
+.gornji:hover,
+.social:hover {
+    cursor: pointer;
+}
+
+.narudzbe {
+    text-decoration: none;
+    color: rgb(225, 28, 71);
+}
+
+.bottext {
+    position: absolute;
+    bottom: 2vw;
+    color: rgb(7, 11, 19);
+    font-weight: 700;
+}
