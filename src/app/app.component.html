@@ -136,8 +136,10 @@
     </main>
     
     <div class="basket" *ngIf="basketOpen">
-        <div *ngFor="let order of listoforders" class="basket-item">{{order}}</div>
-        <div class="basket-item" id="basketcloser" (click)="toggleBasket()">Close basket</div>
+        <div *ngFor="let order of listoforders" class="basket-item">{{order}}
+            <div id = "removeorder" (click)="removeOrder(listoforders.indexOf(order))">X</div>
+        </div>
+        <div class="basket-item"><div  id="basketcloser" (click)="toggleBasket()">Close basket</div><div id="basketcloser" (click)="emptyBasket()">Empty Basket</div></div>
     </div>
 
 </body>

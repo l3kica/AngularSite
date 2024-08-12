@@ -46,4 +46,13 @@ export class AppComponent {
     AOS.init();
   }
 
+  emptyBasket()
+  {
+    this.listoforders = [];
+  }
+
+  removeOrder(index: number)
+  {
+    this.listoforders.splice(index, 1)
+  }
 }
