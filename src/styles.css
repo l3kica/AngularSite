@@ -218,6 +218,16 @@ main {
     justify-content: center;
 }
 
+.mat-badge-content{
+    padding: 2px !important;
+    background-color: rgb(225, 28, 71) !important;
+    color: black!important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+}
+
+
+
 .desc {
     width: 900px;
     height: 40vh;
@@ -449,4 +459,34 @@ main {
     bottom: 2vw;
     color: rgb(7, 11, 19);
     font-weight: 700;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.basket{
+    border-radius: 5px;
+    z-index: 201;
+    position: fixed;
+    width: 284px;
+    top: 64px;
+    right: 120px;
+    background-color: rgba(7, 11, 19, 0.5);
+    backdrop-filter: blur(10px);
+    border: solid, rgba(225, 28, 71, 0.7), 2px ;
+}
+
+.basket-item{
+    padding-left: 8px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#basketcloser{
+    cursor: pointer;
+    margin-bottom: 20px;
+    justify-content: center;
+    padding: 0px;
+    font-weight: 900;
 }

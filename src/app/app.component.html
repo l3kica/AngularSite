@@ -31,10 +31,12 @@
             exampleSite.com
         </div>
 
-        <div class="rightpart">
+        <div class="rightpart" >
 
             <div class="tooltipdiv">
-                    <img src="assets/basket.svg"/>
+                    <img src="assets/basket.svg" (click) = "toggleBasket()"/>
+                    <div *ngIf="listoforders.length as numofitems" class="numberoforders" matBadge="{{numofitems}}" matBadgeOverlap="true" matBadgePosition="below after">
+                    </div>
                 <div class="tooltip">Basket</div>
             </div>
 
@@ -98,14 +100,14 @@
             </div>
 
             <div class="ordercontainer">
-                <a class="narudzbe" href="ecom.html">
+                <a class="narudzbe" (click)="addToList('Ecommerce site')">
                     <div class="ordertype">
                         <p>Ecommerce</p>
                         <p>Website made for internet retailers, imagined as a webstore.</p>
                     </div>
                 </a>
 
-                <a class="narudzbe" href="portfolio.html">
+                <a class="narudzbe" (click)="addToList('Portfolio site')">
                     <div class="ordertype">
                         <div>
                             <p>Portfolio</p>
@@ -114,7 +116,7 @@
                     </div>
                 </a>
 
-                <a class="narudzbe" href="forum.html">
+                <a class="narudzbe" (click)="addToList('Forum site')">
                     <div class="ordertype">
                         <p>Community Forum</p>
                         <p>Website for online communities, made similar to social networks, but centered around discussion.</p>
@@ -132,6 +134,12 @@
         </div>
 
     </main>
+    
+    <div class="basket" *ngIf="basketOpen">
+        <div *ngFor="let order of listoforders" class="basket-item">{{order}}</div>
+        <div class="basket-item" id="basketcloser" (click)="toggleBasket()">Close basket</div>
+    </div>
+
 </body>
 
 </html>
