@@ -48,9 +48,7 @@
             </div>
 
             <div class="tooltipdiv">
-                <a href="myacc.html">
-                    <img src="assets/account.svg">
-                </a>
+                    <img src="assets/account.svg" (click) = "toggleProfile()">
                 <div class="tooltip">Your account</div>
             </div>
 
@@ -140,6 +138,25 @@
             <div id = "removeorder" (click)="removeOrder(listoforders.indexOf(order))">X</div>
         </div>
         <div class="basket-item"><div  id="basketcloser" (click)="toggleBasket()">Close basket</div><div id="basketcloser" (click)="emptyBasket()">Empty Basket</div></div>
+    </div>
+
+    <div class="profile" *ngIf="profileOpen">
+        <div id="login" *ngIf="!profileLoggedIn; else profile_logged_in" >
+            <input #accname placeholder="Name"/>
+            <input #accpassword placeholder="Password"/>
+            <button (click)="LogIn(accname.value)">Log in</button>
+            <button id="closeprofile" (click)="toggleProfile()">X</button>
+        </div>
+        <ng-template #profile_logged_in>
+            <div id="loggedin">
+                <div id="acc">
+                    <img src="assets/account.svg">
+                    <p>{{accountName}}</p>
+                </div>
+                <button (click)="LogOut()">Log out</button>
+                <button id="closeprofile" (click)="toggleProfile()">X</button>
+            </div>
+        </ng-template>
     </div>
 
 </body>

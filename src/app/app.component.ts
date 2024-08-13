@@ -21,6 +21,23 @@ export class AppComponent {
   listoforders: string[] = []
   hidden = false;
   basketOpen: boolean = false
+  profileOpen: boolean = false
+  profileLoggedIn: boolean = false
+  accountName: string = ""
+
+
+  LogIn(value:string)
+  {
+    this.accountName = value;
+    this.profileLoggedIn = true
+  }
+
+  LogOut()
+  {
+    this.accountName = ""
+    this.profileLoggedIn = false
+  }
+
   addToList(value: string)
   {
     this.listoforders.push(value)
@@ -32,6 +49,13 @@ export class AppComponent {
 
   toggleBasket(){
     this.basketOpen = !this.basketOpen
+    this.profileOpen = false
+  }
+
+  toggleProfile()
+  {
+    this.profileOpen = !this.profileOpen
+    this.basketOpen = false
   }
 
   scrollUp(){

@@ -498,3 +498,88 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-weight: 900;
     cursor: pointer;
 }
+
+.profile
+{
+    border-radius: 5px;
+    z-index: 201;
+    position: fixed;
+    width: 284px;
+    top: 64px;
+    right: 0px;
+    background-color: rgba(7, 11, 19, 0.5);
+    backdrop-filter: blur(10px);
+    border: solid, rgba(225, 28, 71, 0.7), 2px ;
+    height: 300px;
+}
+
+.profile #login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile input
+{
+    margin-top: 60px;
+    border-radius: 5px;
+    border: solid, rgba(225, 28, 71, 0.7), 2px ;
+    background-color: rgba(7, 11, 19, 0.5);
+    color: rgb(225, 28, 71);
+}
+
+.profile button{
+    border: solid, rgba(225, 28, 71, 0.7), 2px ;
+    background-color: rgba(225, 28, 71, 0.7);
+    color: rgba(7, 11, 19, 0.5);
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#loggedin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+}
+
+#loggedin p
+{
+    right: 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#loggedin button{
+    width: auto;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+#acc
+{
+    display: flex;
+    justify-content: left;
+    width: 284px;
+}
+
+#acc img
+{
+    width: 64px;
+    margin-left: 6px;
+    margin-right: 24px;
+}
+
+#closeprofile{
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    background: none;
+    color: rgb(225, 28, 71);
+    margin-top: 72px;
+
+}
