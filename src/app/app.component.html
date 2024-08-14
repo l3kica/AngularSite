@@ -41,9 +41,7 @@
             </div>
 
             <div class="tooltipdiv" id="orderimg">
-                <a href="order.html">
-                    <img src="assets/order.svg">
-                </a>
+                    <img src="assets/order.svg" (click)="toggleMessage()">
                 <div class="tooltip">Order</div>
             </div>
 
@@ -159,6 +157,22 @@
         </ng-template>
     </div>
 
+    <div *ngIf="messageOpen">
+        <div class="orderbox" *ngIf="!theorder.message; else order_completed">
+            <input #fullmessage placeholder="Write your message here!"/>
+            <button id='saveorder' (click)="saveOrder(fullmessage.value, listoforders.length, accountName)">Send!</button>
+            <button (click)="toggleMessage()">X</button>
+        </div>
+        <ng-template #order_completed>
+            <div class="orderbox">
+                <p>Order successful!</p>
+                <p>Account name: {{theorder.accName}}</p>
+                <p>Number of items: {{theorder.basketNum}}</p>
+                <p>Sent message:<br>{{theorder.message}}</p>
+                <p>Date: {{theorder.date.toLocaleDateString("en-US")}}</p>
+            </div>
+        </ng-template>
+    </div>
 </body>
 
 </html>

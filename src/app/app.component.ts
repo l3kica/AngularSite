@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';
 import { CommonModule } from '@angular/common';  
 import { BrowserModule } from '@angular/platform-browser';
+import { Order } from './order';
 
 
 @Component({
@@ -24,7 +25,9 @@ export class AppComponent {
   profileOpen: boolean = false
   profileLoggedIn: boolean = false
   accountName: string = ""
-
+  messageOpen: boolean = false
+  messageFull: string = ""
+  public theorder: Order = new Order("", 0, "", new Date());
 
   LogIn(value:string)
   {
@@ -43,6 +46,7 @@ export class AppComponent {
     this.listoforders.push(value)
     console.log(this.listoforders.length)
   }
+
   toggleBadgeVisibility() {
     this.hidden = !this.hidden;
   }
@@ -50,12 +54,21 @@ export class AppComponent {
   toggleBasket(){
     this.basketOpen = !this.basketOpen
     this.profileOpen = false
+    this.messageOpen = false
   }
 
   toggleProfile()
   {
     this.profileOpen = !this.profileOpen
     this.basketOpen = false
+    this.messageOpen = false
+  }
+
+  toggleMessage()
+  {
+    this.messageOpen = !this.messageOpen
+    this.basketOpen = false
+    this.profileOpen = false
   }
 
   scrollUp(){
@@ -79,4 +92,11 @@ export class AppComponent {
   {
     this.listoforders.splice(index, 1)
   }
+
+  saveOrder(fullMessage: string, numberOfItems: number, nameOfAccount: string)
+  {
+    this.theorder = new Order(fullMessage,numberOfItems,nameOfAccount, new Date())
+  }
 }
+
+
